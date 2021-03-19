@@ -19,12 +19,15 @@ h1 {
 	height: 100vh;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	text-align: center;
 }
 
 .main-header {
 	color: black;
-	padding-top: 3rem;
+	padding: 2.5rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .brand {
@@ -35,6 +38,10 @@ h1 {
 .main-section {
 	padding: 1.5rem;
 	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	/* justify-content: center; */
+	flex-direction: column;
 }
 
 .text-bold {
@@ -50,7 +57,7 @@ h1 {
 }
 
 .text-md {
-	font-size: 1em;
+	font-size: 1.6em;
 }
 
 .text-lg {
@@ -58,11 +65,11 @@ h1 {
 }
 
 .btn-primary {
+	display: inline-block;
 	background-color: var(--primary-color);
 	border: none;
 	outline: none;
 	color: white;
-	margin-top: 2rem;
 	padding: 0.5rem 3rem;
 	font-size: 1.5em;
 	border-radius: 2rem;
@@ -72,6 +79,10 @@ h1 {
 .btn-primary:hover {
 	background-color: var(--primary-color-hover);
 	color: black;
+}
+
+.mt-2 {
+	margin-top: 0.5rem;
 }
 
 .mb-2 {
@@ -93,9 +104,9 @@ h1 {
 	margin: 0 0 10px 10px;
 }
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
 	.App {
 		display: flex;
 		flex-direction: column;
 	}
-}
+} */

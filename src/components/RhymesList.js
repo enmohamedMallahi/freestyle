@@ -1,10 +1,25 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
-const RhymesList = ({ list }) => {
-  if (list.length) {
+const BASE_URL = "https://api.datamuse.com"
+
+
+const RhymesList = ({ word }) => {
+  const [rhymes, setRhymes] = useState([]);
+
+  useEffect(() => {
+    fetch(`${BASE_URL}/words?sl=${word}`)
+    .then(response => response.json())
+    .then(data => {
+      setRhymes(data)
+      /*console.log(data)*/
+    });
+    console.log(word)
+  }, [word])
+  
+  if (rhymes.length) {
     return (
-      <p className="text-white text-white overflow-wrap text-md">
-        {list.map(rhyme => (' ' + rhyme.word + ' '))} 
+      <p className="text-white text-white overflow-wrap">
+        {rhymes.map(rhyme => (' ' + rhyme.word + ' '))} 
       </p>
     )
   } else {
